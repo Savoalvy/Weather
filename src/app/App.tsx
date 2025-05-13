@@ -1,10 +1,11 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from './providers/routerProvider.tsx';
 
 const App = () => {
   return (
-    <Flex w={'100vw'} h={'100vh'} align='center' justify='center'>
-      <Text>123</Text>
-    </Flex>
+    <BrowserRouter>
+      <RouterProvider />
+    </BrowserRouter>
   );
 };
 
