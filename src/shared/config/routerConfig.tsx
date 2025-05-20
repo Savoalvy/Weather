@@ -1,6 +1,6 @@
-import type { RouteObject } from 'react-router';
+import type { RouteObject } from 'react-router-dom';
 
-import { Navigate } from 'react-router';
+import { Navigate } from 'react-router-dom';
 import { MainLayout } from '@layouts/';
 import {
   Main,
@@ -15,14 +15,15 @@ export const routerConfig: RouteObject[] = [
   {
     path: '/',
     element: <MainLayout />,
+    errorElement: <NotFound />,
     children: [
       { index: true, element: <Navigate to='home' replace /> },
       { path: 'home', element: <Main /> },
       { path: 'forecasts', element: <Forecasts /> },
       { path: 'favourites', element: <Favourites /> },
       { path: 'map', element: <WorldMap /> },
-      { path: 'settings', element: <Settings /> }
+      { path: 'settings', element: <Settings /> },
+      { path: '*', element: <NotFound /> }
     ]
-  },
-  { path: '*', element: <NotFound /> }
+  }
 ];

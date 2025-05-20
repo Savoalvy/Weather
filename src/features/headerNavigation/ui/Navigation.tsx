@@ -1,5 +1,5 @@
 import { Tabs, TabList, Tab } from '@chakra-ui/react';
-import { useNavigate, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { headerTabs } from '@entities/';
 
 export const TabsNav = () => {
